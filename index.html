@@ -1,5 +1,293 @@
-<!doctype html>
-<html>
-  <head><meta charset="utf-8"><title>Test</title></head>
-  <body><h1>Page de test</h1><p>Ça marche !</p></body>
+﻿<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atelier Alix — Architecture d'interieur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero" aria-label="Retour a l'accueil">
+        <span class="brand-mark">A</span>
+        <div>
+          <div class="brand-name">Atelier Alix</div>
+          <div class="brand-tag">Architecture d'interieur</div>
+        </div>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav-toggle" aria-expanded="false" aria-label="Ouvrir le menu">☰</button>
+        <ul class="nav-list">
+          <li><a href="#expertises">Expertises</a></li>
+          <li><a href="#realisations">Realisation</a></li>
+          <li><a href="#signature">Signature</a></li>
+          <li><a href="#studio">Studio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Architecture d'interieur contemporaine</p>
+          <h1>Des espaces qui respirent le calme et la mesure.</h1>
+          <p class="lede">Nous imaginons des volumes precis, des matieres chaleureuses, et des lumieres qui sculptent l'interieur pour lui donner une presence durable.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#realisations">Decouvrir nos projets</a>
+            <a class="btn ghost" href="#contact">Prendre rendez-vous</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="stat-value">+120</div>
+              <div class="stat-label">Projets livres</div>
+            </div>
+            <div>
+              <div class="stat-value">15 ans</div>
+              <div class="stat-label">Savoir-faire</div>
+            </div>
+            <div>
+              <div class="stat-value">Paris — Lyon</div>
+              <div class="stat-label">Interventions</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-pane">
+            <div class="hero-pane__image" role="img" aria-label="Salon epure avec canape lin et boiserie claire"></div>
+            <div class="floating-card">
+              <p class="mini-label">Materiaux</p>
+              <ul>
+                <li>Chene naturel brosse</li>
+                <li>Pierre travertin</li>
+                <li>Laiton brosse</li>
+              </ul>
+              <span class="chip">Signature Atelier</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertises" class="section">
+      <div class="container section-head reveal">
+        <p class="eyebrow">Expertises</p>
+        <div class="section-title">
+          <h2>Un accompagnement sur-mesure, du trait a la derniere touche.</h2>
+          <p>Nous coordonnons conception, selection matiere, planification et suivi de chantier pour des lieux clairs, fonctionnels et accueillants.</p>
+        </div>
+      </div>
+      <div class="container cards-grid">
+        <article class="card reveal">
+          <div class="card-top">
+            <span class="chip">Renovation</span>
+            <h3>Recomposition complete</h3>
+            <p>Repenser volumes, circulations et lumiere naturelle pour des espaces fluides.</p>
+          </div>
+          <ul class="list">
+            <li>Plans APS / APD</li>
+            <li>Charte materiaux</li>
+            <li>Coordination corps d'etat</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <div class="card-top">
+            <span class="chip">Sur-mesure</span>
+            <h3>Mobilier & agencement</h3>
+            <p>Bibliotheques, banquettes, dressings et cuisines dessines pour votre lieu.</p>
+          </div>
+          <ul class="list">
+            <li>Plans d'execution</li>
+            <li>Prototypage</li>
+            <li>Suivi atelier</li>
+          </ul>
+        </article>
+        <article class="card reveal">
+          <div class="card-top">
+            <span class="chip">Identite</span>
+            <h3>Hospitality & retail</h3>
+            <p>Des experiences spatiales coherentes pour marques, cafes, bureaux, hotels.</p>
+          </div>
+          <ul class="list">
+            <li>Direction artistique</li>
+            <li>Signaletique</li>
+            <li>Parcours client</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="realisations" class="section">
+      <div class="container section-head reveal">
+        <p class="eyebrow">Realisations</p>
+        <div class="section-title">
+          <h2>Espaces lumineux, details precis, matieres vivantes.</h2>
+          <p>Chaque lieu est compose avec une palette taillee pour durer et vieillir avec grace.</p>
+        </div>
+      </div>
+      <div class="container projects-grid">
+        <article class="project-card reveal" style="--bg:url('https://images.unsplash.com/photo-1616594039964-ff8c3ca5f52b?auto=format&fit=crop&w=900&q=80');">
+          <div class="project-meta">
+            <span class="chip">Appartement</span>
+            <span class="chip ghost">Paris 7</span>
+          </div>
+          <h3>Appartement Haussmann, lignes adoucies</h3>
+          <p>Boiseries revisitees, tons sable et pierre travertin.</p>
+        </article>
+        <article class="project-card reveal" style="--bg:url('https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=900&q=80');">
+          <div class="project-meta">
+            <span class="chip">Maison</span>
+            <span class="chip ghost">Lyon</span>
+          </div>
+          <h3>Maison de ville, lumiere traversante</h3>
+          <p>Ouvertures alignees, tonalites chaudes, mobilier sur mesure.</p>
+        </article>
+        <article class="project-card reveal" style="--bg:url('https://images.unsplash.com/photo-1616594038850-efa8daa2749b?auto=format&fit=crop&w=900&q=80');">
+          <div class="project-meta">
+            <span class="chip">Hospitality</span>
+            <span class="chip ghost">Bordeaux</span>
+          </div>
+          <h3>Cafe signature, identite matiere</h3>
+          <p>Chene naturel, laiton brosse, luminaire dessine.</p>
+        </article>
+        <article class="project-card reveal" style="--bg:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80');">
+          <div class="project-meta">
+            <span class="chip">Bureau</span>
+            <span class="chip ghost">Marseille</span>
+          </div>
+          <h3>Atelier-bureau, calme productif</h3>
+          <p>Zones focus et reunion, acoustique soignee, teintes mineral.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="signature" class="section">
+      <div class="container signature-grid">
+        <div class="signature-visual reveal" role="img" aria-label="Salon minimaliste avec rideaux texturises"></div>
+        <div class="signature-copy reveal">
+          <p class="eyebrow">Projet signature</p>
+          <h2>Un salon rive gauche qui marie calme, courbes et lumiere.</h2>
+          <p>Nous avons ouvre l'espace, adouci les angles, et compose une palette sable, pierre et laiton. Les rangements disparaissent dans des panneaux sur mesure tandis que la lumiere naturelle est cadencee par des voilages texturises.</p>
+          <div class="signature-tags">
+            <span class="chip">Palette sable</span>
+            <span class="chip">Boiseries sur mesure</span>
+            <span class="chip">Laiton brosse</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio" class="section">
+      <div class="container about">
+        <div class="about-text reveal">
+          <p class="eyebrow">Studio</p>
+          <h2>Une approche precise, materielle et chaleureuse.</h2>
+          <p>Atelier Alix est un studio d'architecture d'interieur base a Paris. Nous travaillons chaque projet comme une piece unique, avec une attention accrue aux matieres, a la lumiere et aux usages quotidiens.</p>
+          <div class="about-cols">
+            <div>
+              <h3>Manifestes</h3>
+              <ul class="list tight">
+                <li>Calme comme base</li>
+                <li>Matieres sinceres</li>
+                <li>Fonctions lisibles</li>
+                <li>Durabilite concrete</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Services complementaires</h3>
+              <ul class="list tight">
+                <li>Direction artistique</li>
+                <li>Selection mobilier & luminaire</li>
+                <li>Styling final</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="process reveal">
+          <div class="process-step">
+            <span class="step-number">01</span>
+            <div>
+              <h4>Ecouter & cadrer</h4>
+              <p>Intention, budget, delais, contraintes techniques.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="step-number">02</span>
+            <div>
+              <h4>Designer & prototyper</h4>
+              <p>Plans, materiaux, prototypes d'agencement et lumieres.</p>
+            </div>
+          </div>
+          <div class="process-step">
+            <span class="step-number">03</span>
+            <div>
+              <h4>Coordonner & livrer</h4>
+              <p>Suivi de chantier, pilotage ateliers, mise en place finale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <p class="eyebrow">Contact</p>
+          <h2>Parlons de votre projet.</h2>
+          <p>Expliquez votre besoin, nous revenons vers vous sous 48h avec une premiere lecture et une proposition d'echange.</p>
+          <div class="contact-info">
+            <div>
+              <span class="mini-label">Email</span>
+              <a href="mailto:bonjour@atelier-alix.com">bonjour@atelier-alix.com</a>
+            </div>
+            <div>
+              <span class="mini-label">Telephone</span>
+              <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+            </div>
+            <div>
+              <span class="mini-label">Atelier</span>
+              <p>23 rue des Arts, 75011 Paris</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" action="#" method="post">
+          <label class="input-label">Nom
+            <input type="text" name="name" placeholder="Votre nom" required>
+          </label>
+          <label class="input-label">Email
+            <input type="email" name="email" placeholder="vous@email.fr" required>
+          </label>
+          <label class="input-label">Projet
+            <textarea name="message" rows="4" placeholder="Parlez-nous de votre lieu, surface, delais..."></textarea>
+          </label>
+          <button class="btn primary full" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand-name">Atelier Alix</div>
+        <p>Architecture d'interieur, hospitality et residenciel.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#expertises">Expertises</a>
+        <a href="#realisations">Projets</a>
+        <a href="#studio">Studio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-meta">Paris — Lyon · Copyright 2026</div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
 </html>
