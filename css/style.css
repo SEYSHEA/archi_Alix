@@ -223,6 +223,60 @@ a { color: inherit; text-decoration: none; }
 
 .chip.ghost { background: rgba(0,0,0,0.12); color: #fff; }
 
+/* Portfolio double-page grid */
+.project-doubles { display: grid; gap: 28px; margin-top: 24px; }
+
+.project-double {
+  padding: 20px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 16px;
+  border-left: 4px solid var(--accent);
+}
+
+.project-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.project-meta-row h3 { margin: 4px 0 0; font-size: 22px; }
+.meta-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.axis {
+  background: rgba(0,0,0,0.03);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+  display: grid;
+  gap: 10px;
+}
+
+.axis-title {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.axis img { width: 100%; border-radius: 12px; box-shadow: 0 10px 30px -20px rgba(0,0,0,0.4); }
+.axis-text { margin: 0; color: var(--muted); }
+
+.swatches { display: flex; gap: 8px; }
+.swatches span { width: 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.08); box-shadow: inset 0 1px 2px rgba(0,0,0,0.08); }
+
 .projects-grid {
   margin-top: 28px;
   display: grid;
@@ -349,11 +403,12 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 960px) {
   .section { padding: 90px 0; }
   .hero-pane { min-height: 360px; }
-  .cards-grid, .projects-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .cards-grid, .projects-grid, .project-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
   .about { grid-template-columns: 1fr; }
   .nav-toggle { display: inline-flex; }
   .nav-list { position: absolute; right: 0; top: 130%; background: rgba(244,239,233,0.97); padding: 12px; border-radius: 16px; flex-direction: column; align-items: flex-start; box-shadow: var(--shadow); display: none; }
   .nav-list.is-open { display: flex; }
+  .project-meta-row { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 620px) {
