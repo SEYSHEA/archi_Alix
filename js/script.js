@@ -16,10 +16,20 @@
       tag: 'Ecole',
       meta: 'Hospitality - Paris',
       visual: 'images/project1/concept.png',
-      concept: { img: 'images/project1/concept.png', text: "Reconciler patrimoine et contemporaneite : volumes sobres, circulation claire, lumiere rasante pour dessiner l'accueil." },
-      plan: { img: 'images/project1/plan.jpg', text: 'Plan principal noir et blanc, calepinage lisible, noyau technique clarifie.' },
-      ambiance: { img: 'images/project1/ambiance.jpg', text: 'Palette courte : pierre sable, laiton brosse, bois noyer, contrastes sombres.' },
-      swatches: ['#c4b39a', '#7b6a58', '#141413', '#d8c6ad']
+      concept: { img: 'images/project1/concept.png', text: "Grande vue accueil : patrimoine + ligne contemporaine, circulation lisible." },
+      plan: { img: 'images/project1/plan.jpg', text: 'Plan 2D N&B, calepinage et noyau technique clarifies, structurant la double page.' },
+      ambiance: { img: 'images/project1/ambiance.jpg', text: 'Moodboard court : pierre sable, laiton brosse, noyer, contrastes sombre/doux.' },
+      swatches: ['#c4b39a', '#7b6a58', '#141413', '#d8c6ad'],
+      planFiles: [
+        { label: 'Plan principal (PDF)', href: 'images/paris creation boutique/02- DESSIN & TECHNIQUE/Plan couleur RDC.pdf' },
+        { label: 'Coupe AA" (PDF)', href: "images/paris creation boutique/02- DESSIN & TECHNIQUE/Coupe AA''.pdf" },
+        { label: 'Coupe BB" (PDF)', href: "images/paris creation boutique/02- DESSIN & TECHNIQUE/Coupe BB'.pdf" }
+      ],
+      ambianceNotes: [
+        'Palette courte : pierre sable, laiton brosse, noyer, noir cadrant',
+        'Mobilier sur mesure accueil + bar',
+        'Luminaire lineaire et halos doux'
+      ]
     },
     {
       id: 'p2',
@@ -77,8 +87,10 @@
     conceptText: document.getElementById('axis-concept-text'),
     planImg: document.getElementById('axis-plan'),
     planText: document.getElementById('axis-plan-text'),
+    planFiles: document.getElementById('axis-plan-files'),
     ambImg: document.getElementById('axis-ambiance'),
     ambText: document.getElementById('axis-ambiance-text'),
+    ambNotes: document.getElementById('axis-ambiance-notes'),
     swatches: document.getElementById('axis-swatches')
   };
 
@@ -169,6 +181,26 @@
       sw.style.background = color;
       frame.swatches.appendChild(sw);
     });
+    if (frame.planFiles) {
+      frame.planFiles.innerHTML = '';
+      (p.planFiles || []).forEach(item => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = encodeURI(item.href);
+        a.textContent = item.label;
+        a.target = '_blank';
+        li.appendChild(a);
+        frame.planFiles.appendChild(li);
+      });
+    }
+    if (frame.ambNotes) {
+      frame.ambNotes.innerHTML = '';
+      (p.ambianceNotes || p.ambNotes || p.ambianceNotes || []).forEach(note => {
+        const li = document.createElement('li');
+        li.textContent = note;
+        frame.ambNotes.appendChild(li);
+      });
+    }
     bindZoomables();
     document.querySelectorAll('.project-list button').forEach((b, i) => b.classList.toggle('is-active', i === currentIndex));
   }
