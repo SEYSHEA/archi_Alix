@@ -119,17 +119,17 @@
             <div class="frame-grid">
               <div class="axis-card">
                 <p class="axis-title">Concept & contexte</p>
-                <img id="axis-concept" src="" alt="Vue 3D du projet">
+                <img id="axis-concept" class="zoomable" src="" alt="Vue 3D du projet">
                 <p class="axis-text" id="axis-concept-text"></p>
               </div>
               <div class="axis-card">
                 <p class="axis-title">Dessin & technique</p>
-                <img id="axis-plan" src="" alt="Plan principal du projet">
+                <img id="axis-plan" class="zoomable" src="" alt="Plan principal du projet">
                 <p class="axis-text" id="axis-plan-text"></p>
               </div>
               <div class="axis-card">
                 <p class="axis-title">Ambiance & matérialité</p>
-                <img id="axis-ambiance" src="" alt="Moodboard du projet">
+                <img id="axis-ambiance" class="zoomable" src="" alt="Moodboard du projet">
                 <div class="swatches" id="axis-swatches"></div>
                 <p class="axis-text" id="axis-ambiance-text"></p>
               </div>
@@ -246,6 +246,20 @@
     </div>
   </footer>
 
+      <div class="lightbox" aria-modal="true" role="dialog" hidden>
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content" role="document">
+      <button class="lightbox-close" aria-label="Fermer l'image">X</button>
+      <img class="lightbox-img" src="" alt="">
+      <p class="lightbox-caption"></p>
+    </div>
+  </div>
+
   <script src="js/script.js"></script>
 </body>
 </html>
+
+
+
+
+

@@ -12,53 +12,53 @@
   const projects = [
     {
       id: 'p1',
-      title: 'Boutique hôtel',
+      title: 'Boutique hotel',
       tag: 'Ecole',
-      meta: 'Hospitality — Paris',
+      meta: 'Hospitality - Paris',
       visual: 'images/project1/concept.png',
-      concept: { img: 'images/project1/concept.png', text: "Réconcilier patrimoine et contemporanéité : volumes sobres, circulation claire, lumière rasante pour dessiner l'accueil." },
-      plan: { img: 'images/project1/plan.jpg', text: 'Plan principal noir et blanc, calepinage lisible, noyau technique clarifié.' },
-      ambiance: { img: 'images/project1/ambiance.jpg', text: 'Palette courte : pierre sable, laiton brossé, bois noyer, contrastes sombres.' },
+      concept: { img: 'images/project1/concept.png', text: "Reconciler patrimoine et contemporaneite : volumes sobres, circulation claire, lumiere rasante pour dessiner l'accueil." },
+      plan: { img: 'images/project1/plan.jpg', text: 'Plan principal noir et blanc, calepinage lisible, noyau technique clarifie.' },
+      ambiance: { img: 'images/project1/ambiance.jpg', text: 'Palette courte : pierre sable, laiton brosse, bois noyer, contrastes sombres.' },
       swatches: ['#c4b39a', '#7b6a58', '#141413', '#d8c6ad']
     },
     {
       id: 'p2',
       title: 'Lobby & Bar',
       tag: 'Alternance',
-      meta: 'Hospitality — Lyon',
+      meta: 'Hospitality - Lyon',
       visual: 'images/project2/concept.png',
-      concept: { img: 'images/project2/concept.png', text: 'Séquence accueil-bar chaleureuse, volumes doux, mobilier sur-mesure.' },
-      plan: { img: 'images/project2/plan.jpg', text: 'Parcours client lisible, mobilier fixe positionné pour guider les flux.' },
-      ambiance: { img: 'images/project2/ambiance.jpg', text: 'Chêne miel, textile sable, laiton, marbre foncé pour le bar.' },
+      concept: { img: 'images/project2/concept.png', text: 'Sequence accueil-bar chaleureuse, volumes doux, mobilier sur-mesure.' },
+      plan: { img: 'images/project2/plan.jpg', text: 'Parcours client lisible, mobilier fixe positionne pour guider les flux.' },
+      ambiance: { img: 'images/project2/ambiance.jpg', text: 'Chene miel, textile sable, laiton, marbre fonce pour le bar.' },
       swatches: ['#e6d9c6', '#1c1a19', '#a47c52', '#d2cbbf']
     },
     {
       id: 'p3',
       title: 'Appartement rive gauche',
       tag: 'Ecole',
-      meta: 'Résidentiel — Paris',
+      meta: 'Residentiel - Paris',
       visual: 'images/project3/concept.png',
       concept: { img: 'images/project3/concept.png', text: 'Calme et courbes, rideaux filtrants, palette sable.' },
-      plan: { img: 'images/project3/plan.jpg', text: 'Rangements flush, axes visuels dégagés, point de fuite vers la façade.' },
-      ambiance: { img: 'images/project3/ambiance.jpg', text: 'Chêne brossé, travertin, lin, ponctuels noirs pour cadrer.' },
+      plan: { img: 'images/project3/plan.jpg', text: 'Rangements flush, axes visuels degages, point de fuite vers la facade.' },
+      ambiance: { img: 'images/project3/ambiance.jpg', text: 'Chene brosse, travertin, lin, ponctuels noirs pour cadrer.' },
       swatches: ['#e5dece', '#cbb79c', '#1a1917', '#9d7d5c']
     },
     {
       id: 'p4',
-      title: 'Coworking — espaces communs',
+      title: 'Coworking - espaces communs',
       tag: 'Alternance',
-      meta: 'Bureaux — Marseille',
+      meta: 'Bureaux - Marseille',
       visual: 'images/project4/concept.png',
-      concept: { img: 'images/project4/concept.png', text: 'Plateau flexible, strates accueil/café/focus, phone booths.' },
-      plan: { img: 'images/project4/plan.jpg', text: 'Trame de mobilier, circuits acoustiques, éclairage cadencé.' },
-      ambiance: { img: 'images/project4/ambiance.jpg', text: 'Bois clair, textiles lin-laine, métal sable, lumière linéaire.' },
+      concept: { img: 'images/project4/concept.png', text: 'Plateau flexible, strates accueil/cafe/focus, phone booths.' },
+      plan: { img: 'images/project4/plan.jpg', text: 'Trame de mobilier, circuits acoustiques, eclairage cadence.' },
+      ambiance: { img: 'images/project4/ambiance.jpg', text: 'Bois clair, textiles lin-laine, metal sable, lumiere lineaire.' },
       swatches: ['#f0e5d9', '#0f0f0f', '#9e7a52', '#c6c1b7']
     },
     {
       id: 'p5',
       title: 'Maison en pente',
       tag: 'Ecole',
-      meta: 'Résidentiel — Bretagne',
+      meta: 'Residentiel - Bretagne',
       visual: 'images/project5/concept.png',
       concept: { img: 'images/project5/concept.png', text: 'Volumes en cascade, ouvertures cadrant la vue, terrasses en gradin.' },
       plan: { img: 'images/project5/plan.jpg', text: 'Structure bois, circulations verticales lisibles, plan clair.' },
@@ -109,6 +109,46 @@
     });
   }
 
+  // Lightbox pour les visuels
+  const lightbox = document.querySelector('.lightbox');
+  const lbImg = document.querySelector('.lightbox-img');
+  const lbCaption = document.querySelector('.lightbox-caption');
+  const lbClose = document.querySelector('.lightbox-close');
+  const lbBackdrop = document.querySelector('.lightbox-backdrop');
+
+  function openLightbox(src, alt) {
+    if (!lightbox || !lbImg) return;
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    if (lbCaption) lbCaption.textContent = alt || '';
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  [lbClose, lbBackdrop, lightbox].forEach(el => {
+    el?.addEventListener('click', evt => {
+      if (el === lightbox && evt.target !== lightbox) return;
+      closeLightbox();
+    });
+  });
+
+  document.addEventListener('keydown', evt => {
+    if (evt.key === 'Escape') closeLightbox();
+  });
+
+  function bindZoomables() {
+    [frame.conceptImg, frame.planImg, frame.ambImg].forEach(el => {
+      if (!el) return;
+      el.onclick = () => openLightbox(el.src, el.alt);
+    });
+  }
+
   function renderProject() {
     const list = filteredProjects();
     if (!list.length) return;
@@ -129,6 +169,7 @@
       sw.style.background = color;
       frame.swatches.appendChild(sw);
     });
+    bindZoomables();
     document.querySelectorAll('.project-list button').forEach((b, i) => b.classList.toggle('is-active', i === currentIndex));
   }
 
